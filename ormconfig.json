@@ -1,0 +1,16 @@
+{
+   "type": "mongodb",
+   "url": "mongodb+srv://Guilherme:guilherme3210@cluster0.kb6ui.mongodb.net/Cluster0?retryWrites=true&w=majority",
+   "synchronize": true,
+   "useUnifiedTopology": true,
+   "entities": [
+      "src/modules/**/infra/typeorm/entities/*.ts"
+   ],
+   "subscribers": [
+      "src/subscriber/**/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "src/modules/**/infra/typeorm/entities",
+      "subscribersDir": "src/subscriber"
+   }
+}
