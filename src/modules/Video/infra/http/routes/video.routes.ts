@@ -11,10 +11,10 @@ const multerConfig = multer(upload.multer);
 videoRouter.get('/', videoController.index);
 
 videoRouter.get(
-    '/',
+    '/:id',
     celebrate({
-        [Segments.BODY]: {
-            title: Joi.string().required(),
+        [Segments.PARAMS]: {
+            id: Joi.string().required(),
         },
     }),
     videoController.show,

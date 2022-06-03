@@ -1,4 +1,4 @@
-import { getRepository, Repository } from "typeorm";
+import { getRepository, Like, Repository } from "typeorm";
 import { ICreateVideo } from "../../../domain/models/ICreateVideo";
 import { IVideo } from "../../../domain/models/IVideo";
 import { IVideoRepository } from "../../../domain/repositories/IVideoRepository";
@@ -35,11 +35,11 @@ export default class VideoRepository implements IVideoRepository {
         return this.ormRepository.findOne(id);
     }
 
-    public async findVideoByTitle(title: string): Promise<IVideo> {
-        return this.ormRepository.findOne({
+    public async search(title: string): Promise<IVideo[]> {
+        return this.ormRepository.find({
             where: {
-                title,
-            }
+                title: Like(`%${title}%`),
+            },
         });
     }
 }

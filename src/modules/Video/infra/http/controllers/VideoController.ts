@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
 import DeleteVideoService from "../../../services/DeleteVideoService";
-import ListVideoByTitleService from "../../../services/ListVideoByTitleService";
 import ListVideosService from "../../../services/ListVideosService";
 import UploadVideoService from "../../../services/UploadVideoService";
+import ShowVideoService from "../../../services/ShowVideoService";
 
 export default class VideoController {
     public async index (req: Request, res: Response): Promise<Response> {
@@ -15,11 +15,11 @@ export default class VideoController {
     }
 
     public async show (req: Request, res: Response): Promise<Response> {
-        const { title } = req.body;
+        const { id } = req.params;
 
-        const listVideoByTitle = container.resolve(ListVideoByTitleService);
+        const listVideoById = container.resolve(ShowVideoService);
 
-        const video = await listVideoByTitle.execute(title);
+        const video = await listVideoById.execute(id);
 
         return res.json(video);
     }

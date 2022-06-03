@@ -7,5 +7,5 @@ export interface IVideoRepository {
     delete (videos: IVideo[] | IVideo): Promise<void>;
     find (): Promise<IVideo[]>;
     findVideoById (id: string): Promise<IVideo>;
-    findVideoByTitle (title: string): Promise<IVideo>;
+    search (title: string): Promise<IVideo[]>;
 }
