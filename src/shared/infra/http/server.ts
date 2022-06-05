@@ -30,7 +30,7 @@ class App {
         this.app.use(express.urlencoded());
         this.app.use(router);
         this.app.use(errors());
-        this.app.use('/video', express.static('uploads/'));
+        this.app.use('/videos', express.static('uploads/'));
         this.app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
             if (error instanceof AppError) {
                 return res.status(error.statusCode).json({
