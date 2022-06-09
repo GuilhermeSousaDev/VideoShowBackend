@@ -1,33 +1,36 @@
 {
-   "name": "new-typeorm-project",
-   "version": "0.0.1",
-   "description": "Awesome project developed with TypeORM.",
-   "devDependencies": {
-      "@types/bcryptjs": "^2.4.2",
-      "@types/cors": "^2.8.12",
-      "@types/express": "^4.17.13",
-      "@types/jsonwebtoken": "^8.5.8",
-      "@types/multer": "^1.4.7",
-      "@types/node": "^8.0.29",
-      "ts-node": "3.3.0",
-      "typescript": "3.3.3333"
-   },
-   "dependencies": {
-      "bcryptjs": "^2.4.3",
-      "celebrate": "^15.0.1",
-      "cors": "^2.8.5",
-      "express": "^4.15.4",
-      "express-async-errors": "^3.1.1",
-      "jsonwebtoken": "^8.5.1",
-      "mongodb": "^3.0.8",
-      "multer": "^1.4.4",
-      "reflect-metadata": "^0.1.10",
-      "ts-node-dev": "^1.1.8",
-      "tsyringe": "^4.6.0",
-      "typeorm": "0.2.41"
-   },
-   "scripts": {
-      "start": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
-      "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
-   }
+  "name": "new-typeorm-project",
+  "version": "0.0.1",
+  "description": "Awesome project developed with TypeORM.",
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jest": "^28.1.1",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^8.0.29",
+    "jest": "^28.1.0",
+    "ts-node": "3.3.0",
+    "typescript": "3.3.3333"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "celebrate": "^15.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.15.4",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.0.8",
+    "multer": "^1.4.4",
+    "reflect-metadata": "^0.1.10",
+    "ts-node-dev": "^1.1.8",
+    "tsyringe": "^4.6.0",
+    "typeorm": "0.2.41"
+  },
+  "scripts": {
+    "start": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "test": "jest"
+  }
 }
