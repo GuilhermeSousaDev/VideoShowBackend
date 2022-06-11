@@ -17,9 +17,9 @@ export default class VideoController {
     public async show (req: Request, res: Response): Promise<Response> {
         const { id } = req.params;
 
-        const listVideoById = container.resolve(ShowVideoService);
+        const showVideoService = container.resolve(ShowVideoService);
 
-        const video = await listVideoById.execute(id);
+        const video = await showVideoService.execute(id);
 
         return res.json(video);
     }
